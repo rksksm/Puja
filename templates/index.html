@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Registration Form for New Patients</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="static/font-awesome/css/font-awesome.min.css" />
+
+    <script type="text/javascript" src="static/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="static/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/send.js"></script>
+    <script type="text/javascript" src="static/js/search.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="page-header">
+    
+                    <img src="static/img/logo_11.jpg" alt="logo">
+                
+</div>
+
+<!-- Registration Form - START -->
+ <div class="container" id="container1">
+ <br>
+                                    <form id="form1" role="form" autocomplete="off">
+          <input name="user" id="ask" style="width:60%; height:60px; margin-left:10%; display:inline;"  type="text" class="form-control typeahead" placeholder="Enter Patient ID">
+          <button  style="margin-left:0px; width:10%; height:60px;  font-size:30px;" class="btn btn-success btn-responsive" type="submit">Search</button> 
+          <button  style="margin-left:0px; width:10%; height:60px;  font-size:30px;" target="_blank" class="btn btn-success btn-responsive"onclick="(function(){location.href += '/give'})();">Print</button> 
+          
+        </form><br>
+                <!-- <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">Please Register</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form id="form" role="form">
+                            <div class="form-group">
+                                <input type="text" name="name" id="name" class="form-control input-lg" placeholder="Name">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="age" id="age" class="form-control input-lg" placeholder="Age">
+                            </div>
+
+                            <div class="form-group">
+                                <select class="form-control input-lg" id="gen" name="gen" class="form-control" >
+                                <option>Male</option>
+                                <option>Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                    <input class="form-control input-lg" type="date" id="dob" name="dob" placeholder="Date Of Birth (YYYY/MM/DD)">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="dept" id="dept" class="form-control input-lg" placeholder="Department">
+                            </div>
+
+                            
+                            </div>
+
+                            <input type="submit" value="Register" class="btn btn-info btn-block">
+                        </form> -->
+                    </div>
+
+                </div>
+            </div>
+<style>
+#container1 {
+    background-color: #e2dada;
+    margin-top: 100px;
+}
+
+.centered-form {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.centered-form .panel {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+</style>
+<!-- Registration Form - END -->
+
+</div>
+</body>
+</html>
