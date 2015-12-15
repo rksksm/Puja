@@ -8,12 +8,25 @@ now = datetime.datetime.now()
 def hello():
     return render_template('table.html')
 q=1
+@app.route('/regDoc', methods=['POST'])
+def regDoc():
+    name = request.form['name'];
+    print name
+    gen = request.form['gen'];
+    print gen
+    res=ins(str(name),str(gen))
+    print res
+    return hello()
 @app.route('/insStud')
 def insStud():
     return render_template('studReg.html')
 @app.route('/insDoc')
 def insDoc():
-    return render_template('insDoc.html')
+    a,b=dep()
+    f=len(b)
+    print a
+    print b
+    return render_template('insDoc.html',sr=a,enroll=b,count=f)
 @app.route('/viewPat')
 def viewPat():
     a,b,c,d,e,i,g,h=pat()
@@ -57,15 +70,13 @@ def prt():
 def save():
     name = request.form['name'];
     print name
-    age = request.form['age'];
-    print age
+    enroll = request.form['enroll'];
+    print enroll
     gen = request.form['gen'];
     print gen
     dob = request.form['dob'];
     print dob
-    dept = request.form['dept'];
-    print dept
-    res=ins(str(name),str(age),str(gen),str(dob),str(dept))
+    res=ins_stud(str(name),str(enroll),str(gen),str(dob))
     print res
     return hello()
 if __name__=="__main__":

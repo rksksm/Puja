@@ -9,19 +9,27 @@ def fet(A):
 	d = list(itertools.chain(*lis))
 	db.close()
 	return d[0], d[1], d[2], d[3], d[4] 
-def ins(a,b,c,d,e):
-	db = MySQLdb.connect(user='root', passwd='', port=3306, host='127.0.0.1', db='test')
+def ins(a,b):
+	db = MySQLdb.connect(user='root', passwd='', port=3306, host='127.0.0.1', db='nri_medicalwing')
 	cursor = db.cursor()
-	temp="INSERT INTO `test`.`hosp`(`name`,`age`,`gen`,`dob`,`dept`) VALUES ('"+a+"', '"+b+"', '"+c+"', '"+d+"', '"+e+"')"
+	temp="INSERT INTO `nri_medicalwing`.`doc`(`name`,`depid`) VALUES ('"+a+"', '"+b+"')"
 	cursor.execute(temp)
 	db.commit()
+	db.close()
+	return "inserted"
+def ins_stud(a,b,c,d):
+	db = MySQLdb.connect(user='root', passwd='', port=3306, host='127.0.0.1', db='nri_medicalwing')
+	cursor = db.cursor()
+	temp="INSERT INTO `nri_medicalwing`.`stud`(`name`,`enroll`,`gen`,`dob`) VALUES ('"+a+"', '"+b+"','"+c+"', '"+d+"')"
+	cursor.execute(temp)
+	db.commit() 
 	db.close()
 	return "inserted"
 def stud():
 	db = MySQLdb.connect(user='root', passwd='', port=3306, host='127.0.0.1', db='nri_medicalwing')
 	cursor = db.cursor()
 	a=[];b=[];c=[];d=[];e=[];
-	cursor.execute("select * from stud")
+	cursor.execute("select * from stud order by enroll")
 	lis = cursor.fetchall()
 	for i in lis:
 		a.append(i[0])
@@ -30,6 +38,17 @@ def stud():
 		d.append(i[3])
 	db.close()
 	return (a,b,c,d)
+def dep():
+	db = MySQLdb.connect(user='root', passwd='', port=3306, host='127.0.0.1', db='nri_medicalwing')
+	cursor = db.cursor()
+	a=[];b=[];
+	cursor.execute("select * from dep order by iddep")
+	lis = cursor.fetchall()
+	for i in lis:
+		a.append(i[0])
+		b.append(i[1])
+	db.close()
+	return (a,b)
 def pat():
 	db = MySQLdb.connect(user='root', passwd='', port=3306, host='127.0.0.1', db='nri_medicalwing')
 	cursor = db.cursor()
@@ -51,7 +70,7 @@ def DocDep():
 	db = MySQLdb.connect(user='root', passwd='', port=3306, host='127.0.0.1', db='nri_medicalwing')
 	cursor = db.cursor()
 	a=[];b=[];c=[];
-	cursor.execute("select `doc`.`iddoc`,`doc`.`name`,`dep`.`name` from `nri_medicalwing`.`doc`LEFT JOIN `nri_medicalwing`.`dep` ON `nri_medicalwing`.`dep`.`iddep`=`nri_medicalwing`.`doc`.`depid`")
+	cursor.execute("select `doc`.`iddoc`,`doc`.`name`,`dep`.`name` from `nri_medicalwing`.`doc`LEFT JOIN `nri_medicalwing`.`dep` ON `nri_medicalwing`.`dep`.`iddep`=`nri_medicalwing`.`doc`.`depid` order by `nri_medicalwing`.`doc`.`depid`")
 	lis = cursor.fetchall()
 	for i in lis:
 		a.append(i[0])

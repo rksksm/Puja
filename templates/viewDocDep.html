@@ -37,21 +37,19 @@ tr:hover {
 </div>
       <form id="form" role="form" autocomplete="off">
       <div class="jumbotron" style="margin-top:40px; height:350px; overflow-y: scroll;">
-<table style="font-size:30px" class="text-center">
-<th>Select&nbsp&nbsp&nbsp </th><th>&nbsp&nbsp&nbspSr.NO.&nbsp&nbsp&nbsp </th><th>&nbsp&nbsp&nbsp Doctor's name&nbsp&nbsp&nbsp </th><th>&nbsp&nbsp&nbsp Department's Name&nbsp&nbsp&nbsp </th>
+<table style="font-size:30px; margin-left:250px;" class="text-center">
+<th>&nbsp&nbsp&nbspDr. ID&nbsp&nbsp&nbsp </th><th>&nbsp&nbsp&nbsp Doctor's name&nbsp&nbsp&nbsp </th><th>&nbsp&nbsp&nbsp Department's Name&nbsp&nbsp&nbsp </th>
           {% for i in range(0,count) %}
 
          <tr style="font-size:20px">
-             <td>
-        <input type="radio" value="{{sr[i]}}" name="user" style="text-align:center; vertical-align: middle;">    
-    </td> 
+    
          <td>&nbsp&nbsp&nbsp {{sr[i]}}&nbsp&nbsp&nbsp </td><td>&nbsp&nbsp&nbsp{{doc[i]}}&nbsp&nbsp&nbsp</td><td>&nbsp&nbsp&nbsp{{dep[i]}}
          &nbsp&nbsp&nbsp</td>
 
 
           {% endfor %}
 </table>
-      </div><input class="btn-success" style="width:20%; height:50px; font-size:20px; margin-left:1000px;" type="submit" value='Delete Selected Rows'/>
+      </div>
 </form>
       
     </body>
