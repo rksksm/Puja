@@ -11,10 +11,81 @@
     <script type="text/javascript" src="static/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="static/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="static/js/send.js"></script>
+<<<<<<< HEAD
+    <script type="text/javascript" src="static/js/pat_ins.js"></script>
+=======
+>>>>>>> 12101d318b1769587018ea9949d576a7a6dfaca8
     <script type="text/javascript" src="static/js/search.js"></script>
 
 </head>
 <body>
+<<<<<<< HEAD
+<div style="margin-top:0px;">
+    <div class="page-header">
+        <img src="static/img/logo_11.jpg" alt="logo">
+    </div>
+    <button id="print" onclick="(function(){$('#container1').hide();$('#new').show();$('#print').hide();$('#prt').show();})();window.print()">Print</button>
+    <button id="new" onclick="(function(){location.reload();})();">New</button>
+    <div class="container" id="container1">
+        <br>
+        <form id="form1" role="form" autocomplete="off">
+            <div id="srch">
+                <input name="user" id="ask" style="width:60%; height:60px; margin-left:10%; display:inline;"  type="text" class="form-control typeahead" placeholder="Enter Enrollment No.">
+                <button  style="margin-left:0px; width:10%; height:60px;  font-size:30px;" class="btn btn-success btn-responsive" onclick="(function(){$('#det').show();$('#container1').hide();})();" type="submit">Search</button> 
+            </div>
+        </form><br>
+    </div>
+</div>
+
+
+
+
+
+<div id="pri" class="container">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title text-center">Students Registration</h3>
+        </div>
+        <div class="panel-body">
+            <form id="form2" role="form" autocomplete="off">
+                <div class="form-group">
+                    <input type="text" name="enrollCopy" id="enrollCopy" class="form-control input-lg" placeholder="Enrollment NO.">
+                    <input type="hidden" name="enroll" id="enroll" >
+                </div>
+                <div class="form-group">
+                    <input type="text" name="dis" id="dis" class="form-control input-lg" placeholder="Desiese">
+                </div> 
+                    <select class="form-control input-lg" id="dep" name="dep" class="form-control" placeholder="Department">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>                        
+                <input id="show" type="submit" value="print" class="btn btn-info btn-block" onclick="(function(){$('#prt').show();$('#pri').hide();$('#print').show();$('#dis1').text($('#dis').val());})();">
+            </form>  
+        </div>
+    </div>         
+</div>                    
+<div id="prt">
+    <table class="table">
+        <tr>
+            <td style="width=50px;">Name</td><td style="width=50px;"><label id="name"></label> </td>
+            <td style="width=50px;">Desiese</td><td style="width=150px;"><label id="dis1"></label> </td>
+        </tr>
+        <tr>
+            <td style="width=50px;">DOB</td> <td style="width=50px;"><label id="dob"></label> </td>
+            <td style="width=50px;">Gender :- </td><td style="width=150px;"><label id="gen"></label> </td>
+        </tr>
+        <tr>
+            <td style="width=50px;">Department :- </td><td style="width=50px;"><label id="dep1"></label>  </td>
+            <td style="width=50px;">issueing :- </td><td style="width=50px;"><label id="cre"></label> </td>
+        </tr>
+    </table>
+    <h2>Rx</h2>
+</div>
+=======
 
 <div class="container">
 
@@ -69,6 +140,7 @@
 
                 </div>
             </div>
+>>>>>>> 12101d318b1769587018ea9949d576a7a6dfaca8
 <style>
 #container1 {
     background-color: #e2dada;

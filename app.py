@@ -17,6 +17,21 @@ def regDoc():
     res=ins(str(name),str(gen))
     print res
     return hello()
+<<<<<<< HEAD
+@app.route('/conferm', methods=['POST'])
+def conferm():
+    name = request.form['enroll'];
+    print name
+    gen = request.form['dis'];
+    print gen
+    dep = request.form['dep'];
+    print dep
+    res=insPrt(str(name),str(gen),str(dep))
+    r=det(str(dep))
+    print res
+    return r
+=======
+>>>>>>> 12101d318b1769587018ea9949d576a7a6dfaca8
 @app.route('/insStud')
 def insStud():
     return render_template('studReg.html')
@@ -29,9 +44,15 @@ def insDoc():
     return render_template('insDoc.html',sr=a,enroll=b,count=f)
 @app.route('/viewPat')
 def viewPat():
+<<<<<<< HEAD
+    a,b,c,d,e,i,g=pat()
+    f=len(b)
+    return render_template('viewPat.html',sr=a,enroll=b,name=c,gen=e,dob=d,des=i,doc=g,count=f)
+=======
     a,b,c,d,e,i,g,h=pat()
     f=len(b)
     return render_template('viewPat.html',sr=a,enroll=b,name=c,gen=e,dob=d,des=i,doc=g,cet=h,count=f)
+>>>>>>> 12101d318b1769587018ea9949d576a7a6dfaca8
 @app.route('/viewStud')
 def viewStud():
     b,c,d,e=stud()
@@ -52,6 +73,16 @@ def show():
 	global q
 	q = request.form['user'];
 	print q
+<<<<<<< HEAD
+	a,b,c,d=fet(str(q))
+	print a,b,c,d
+	return jsonify({"name":b,"enroll":a,"gen":c,"dob":d})
+@app.route('/give')
+def give():
+	a,b,c,d,e=fet(str(q))
+	print a,b,c,d,e
+	return render_template('print.html',name=a,age=b,gen=c,dob=d)
+=======
 	a,b,c,d,e=fet(str(q))
 	print a,b,c,d,e
 	return render_template('print.html',name=a,age=b,gen=c,dob=d,dept=e)
@@ -60,6 +91,7 @@ def give():
 	a,b,c,d,e=fet(str(q))
 	print a,b,c,d,e
 	return render_template('print.html',name=a,age=b,gen=c,dob=d,dept=e,today=str(now))
+>>>>>>> 12101d318b1769587018ea9949d576a7a6dfaca8
 @app.route('/home')
 def home():
     return render_template('index.html')
