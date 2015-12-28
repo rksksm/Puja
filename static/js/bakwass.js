@@ -1,3 +1,4 @@
+
 $(function($){
 	$('#pri').hide();
 	$('#form1').on('submit',function(e){
@@ -23,6 +24,19 @@ $(function($){
 				$('#pri').show();
 				console.log(response);
 
+			},
+			error: function(error){
+				alert('Not found, register this Patient');
+				location.href='insStud';
+		$.ajax({
+			url: '/show',
+			data: $('#form2').serialize(),
+			type: 'POST',
+			success: function(response){
+				alert('found');
+				$('#container1').hide();
+				 $('#pri').show();
+				console.log(response);
 			},
 			error: function(error){
 				alert('not found');

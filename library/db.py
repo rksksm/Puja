@@ -2,7 +2,7 @@ import MySQLdb
 import itertools
 
 def fet(A):
-<<<<<<< HEAD
+#>>>>>>> HEAD
 	db = MySQLdb.connect(user='root', passwd='', port=3306, host='127.0.0.1', db='nri_medicalwing')
 	cursor = db.cursor()
 	cursor.execute("SELECT `stud`.`enroll`,`stud`.`name`,`stud`.`gen`,`stud`.`dob` FROM `nri_medicalwing`.`stud` where `stud`.`enroll`='"+A+"';")
@@ -10,7 +10,7 @@ def fet(A):
 	d = list(itertools.chain(*lis))
 	db.close()
 	return d[0], d[1], d[2], d[3]
-=======
+
 	db = MySQLdb.connect(user='root', passwd='', port=3306, host='127.0.0.1', db='test')
 	cursor = db.cursor()
 	cursor.execute("SELECT `hosp`.`name`, `hosp`.`age`, `hosp`.`gen`, `hosp`.`dob`, `hosp`.`dept` FROM `test`.`hosp` where PID='"+A+"'")
@@ -18,7 +18,7 @@ def fet(A):
 	d = list(itertools.chain(*lis))
 	db.close()
 	return d[0], d[1], d[2], d[3], d[4] 
->>>>>>> 12101d318b1769587018ea9949d576a7a6dfaca8
+#>>>>>>> 12101d318b1769587018ea9949d576a7a6dfaca8
 def ins(a,b):
 	db = MySQLdb.connect(user='root', passwd='', port=3306, host='127.0.0.1', db='nri_medicalwing')
 	cursor = db.cursor()
@@ -27,17 +27,17 @@ def ins(a,b):
 	db.commit()
 	db.close()
 	return "inserted"
-<<<<<<< HEAD
+#>>>>>>> HEAD
 def insPrt(a,b,c):
 	db = MySQLdb.connect(user='root', passwd='', port=3306, host='127.0.0.1', db='nri_medicalwing')
 	cursor = db.cursor()
-	temp="INSERT INTO `nri_medicalwing`.`pat` (`enroll`,`desiese`,`iddep`) VALUES ('"+a+"', '"+b+"', "+c+")"
+	temp="INSERT INTO `nri_medicalwing`.`pat` (`enroll`,`desiese`,`depid`) VALUES ('"+a+"', '"+b+"', "+c+")"
 	cursor.execute(temp)
 	db.commit()
 	db.close()
 	return "inserted"
-=======
->>>>>>> 12101d318b1769587018ea9949d576a7a6dfaca8
+
+#>>>>>>> 12101d318b1769587018ea9949d576a7a6dfaca8
 def ins_stud(a,b,c,d):
 	db = MySQLdb.connect(user='root', passwd='', port=3306, host='127.0.0.1', db='nri_medicalwing')
 	cursor = db.cursor()
@@ -73,12 +73,8 @@ def dep():
 def pat():
 	db = MySQLdb.connect(user='root', passwd='', port=3306, host='127.0.0.1', db='nri_medicalwing')
 	cursor = db.cursor()
-	a=[];b=[];c=[];d=[];e=[];f=[];g=[];h=[];
-<<<<<<< HEAD
-	cursor.execute("select patid,stud.enroll,stud.name,stud.gen,stud.dob,desiese,created FROM nri_medicalwing.pat LEFT JOIN nri_medicalwing.stud ON nri_medicalwing.pat.enroll=nri_medicalwing.stud.enroll;")
-=======
-	cursor.execute("select * from nri_medicalwing.pat")
->>>>>>> 12101d318b1769587018ea9949d576a7a6dfaca8
+	a=[];b=[];c=[];d=[];e=[];f=[];g=[];
+	cursor.execute("select patid,stud.enroll,stud.name,stud.gen,stud.dob,desiese,created FROM nri_medicalwing.pat LEFT JOIN nri_medicalwing.stud ON nri_medicalwing.pat.enroll=nri_medicalwing.stud.enroll order by created asc;")
 	lis = cursor.fetchall()
 	for i in lis:
 		a.append(i[0])
@@ -88,14 +84,8 @@ def pat():
 		e.append(i[4])	
 		f.append(i[5])
 		g.append(i[6])
-<<<<<<< HEAD
 	db.close()
 	return (a,b,c,d,e,f,g)
-=======
-		h.append(i[7])	
-	db.close()
-	return (a,b,c,d,e,f,g,h)
->>>>>>> 12101d318b1769587018ea9949d576a7a6dfaca8
 def DocDep():
 	db = MySQLdb.connect(user='root', passwd='', port=3306, host='127.0.0.1', db='nri_medicalwing')
 	cursor = db.cursor()
@@ -107,7 +97,6 @@ def DocDep():
 		b.append(i[1])
 		c.append(i[2])
 	db.close()
-<<<<<<< HEAD
 	return (a,b,c)
 def det(a1):
 	db = MySQLdb.connect(user='root', passwd='', port=3306, host='127.0.0.1', db='nri_medicalwing')
@@ -119,6 +108,3 @@ def det(a1):
 		a.append(i[0])
 	db.close()
 	return "".join(a)
-=======
-	return (a,b,c)
->>>>>>> 12101d318b1769587018ea9949d576a7a6dfaca8
